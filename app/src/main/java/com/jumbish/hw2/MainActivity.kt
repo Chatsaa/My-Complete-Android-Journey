@@ -5,16 +5,22 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    // Top level Property
+    lateinit var resultLauncher :ActivityResultLauncher<Intent>
   lateinit var etName : EditText
   lateinit var etAge : EditText
   lateinit var btnGo : Button
+  lateinit var btnFormFill :Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,9 +34,18 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+            if (result.resultCode == RESULT_OK){
+                val data  = result.data
+                val message = data?.getStringExtra("result")
+                Toast.makeText(this, "Message from second Activity : $message",Toast.LENGTH_SHORT).show()
+            }
+
+        }
         etName = findViewById(R.id.etName)
         etAge = findViewById(R.id.etAge)
         btnGo = findViewById(R.id.btnGo)
+        btnFormFill = findViewById(R.id.btnForm)
         btnGo.setOnClickListener {
             val name  = etName.text.toString().trim()
             val age  = etAge.text.toString().trim()
@@ -50,10 +65,13 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("name",name)
             intent.putExtra("age",age)
 
-            startActivity(intent)
+            resultLauncher.launch(intent)
         }
 
-
+btnFormFill.setOnClickListener {
+    val intent = Intent(this, FormFill::class.java)
+    startActivity(intent)
+}
 
 
 

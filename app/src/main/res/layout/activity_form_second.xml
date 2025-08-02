@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormSecondActivity">
+
+    <TextView
+        android:id="@+id/tname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Name :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="rName"
+        app:layout_constraintBottom_toBottomOf="@+id/tname"
+        app:layout_constraintStart_toEndOf="@+id/tname"
+        app:layout_constraintTop_toTopOf="@+id/tname" />
+
+    <TextView
+        android:id="@+id/tdob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="DOB :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tname" />
+
+    <TextView
+        android:id="@+id/rdob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="rdob"
+        app:layout_constraintBottom_toBottomOf="@+id/tdob"
+        app:layout_constraintStart_toEndOf="@+id/tdob"
+        app:layout_constraintTop_toTopOf="@+id/tdob" />
+
+
+    <TextView
+        android:id="@+id/tGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Gender :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tdob" />
+
+    <TextView
+        android:id="@+id/rGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="rGender"
+        app:layout_constraintBottom_toBottomOf="@+id/tGender"
+        app:layout_constraintStart_toEndOf="@+id/tGender"
+        app:layout_constraintTop_toTopOf="@+id/tGender" />
+
+
+    <TextView
+        android:id="@+id/tHobbies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Hobbies :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tGender" />
+
+    <TextView
+        android:id="@+id/rHobbies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="rHobbies"
+        app:layout_constraintBottom_toBottomOf="@+id/tHobbies"
+        app:layout_constraintStart_toEndOf="@+id/tHobbies"
+        app:layout_constraintTop_toTopOf="@+id/tHobbies" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

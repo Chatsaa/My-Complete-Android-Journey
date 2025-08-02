@@ -1,5 +1,6 @@
 package com.jumbish.hw2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
@@ -10,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SecondActivity : AppCompatActivity() {
+
    lateinit var tvName : TextView
    lateinit var tvAge : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +32,14 @@ class SecondActivity : AppCompatActivity() {
         tvName.setText(name)
         tvAge.setText(age)
 
+    }
+
+    override fun onBackPressed() {
+        val intent  = Intent()
+        intent.putExtra("result", "Thanks Data Shown Successfully.")
+        setResult(RESULT_OK,intent)
+
+        super.onBackPressed()
     }
 
 
