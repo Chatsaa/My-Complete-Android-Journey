@@ -37,4 +37,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Form fill" />
+
+    <Button
+        android:id="@+id/btnRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView" />
+
+
+
+    <Button
+        android:id="@+id/btnRecyclerViewPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView Practice" />
 </LinearLayout>
